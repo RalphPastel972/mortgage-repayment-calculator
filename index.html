@@ -30,72 +30,113 @@
   </head>
   <body>
     <main>
-      <section class="chapeau">
-        <h1>Mortgage Calculator</h1>
-        <button id="clear_all_fields_button">Clear All</button>
-      </section>
-      <section class="zone_de_saisie">
-        <form action="" method="post">
-          <fieldset>
-            <label for="input_mortgage_amount">Mortgage Amount</label>
-            <input
-              type="text"
-              id="input_mortgage_amount"
-              name="Amount of the mortgage"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="input_mortgage_term">Mortgage Term</label>
-            <input type="text" name="Mortgage Term" id="input_mortgage_term" />
-            <label for="input_interest_rate">Interest Rate</label>
-            <input type="text" name="Interest Rate" id="input_interest_rate" />
-          </fieldset>
-          <fieldset class="radio_input_fieldset">
-            <legend>Mortgage Type</legend>
-            <div>
-              <input
-                type="radio"
-                name="Mortgage Type"
-                id="input_radio_repayment"
-              />
-              <label for="input_radio_repayment">Repayment</label>
-            </div>
+      <div class="white_background_section">
+        <section class="chapeau">
+          <h1>Mortgage Calculator</h1>
+          <button id="clear_all_fields_button">Clear All</button>
+        </section>
+        <section class="zone_de_saisie">
+          <form action="" method="">
+            <fieldset>
+              <label for="input_mortgage_amount">Mortgage Amount</label>
+              <div class="complex_input_field">
+                <div class="input_clarification_block">£</div>
+                <input
+                  type="text"
+                  id="input_mortgage_amount"
+                  name="Amount of the mortgage"
+                />
+              </div>
+              <p class="requirement_warning_message">This field is required</p>
+            </fieldset>
+            <fieldset id="moving_inputs">
+              <div>
+                <label for="input_mortgage_term">Mortgage Term</label>
 
-            <div>
-              <input
-                type="radio"
-                name="Mortgage Type"
-                id="input_radio_interest_only"
-              />
-              <label for="input_radio_interest_only">Interest Only</label>
-            </div>
-          </fieldset>
-          <input
-            type="submit"
-            value="Calculate Repayments"
-            id="submit_button"
-          />
-        </form>
-      </section>
-      <div id="empty_results_area">
-        <h2>Results shown here</h2>
-        <p>
-          Complete the form and click “calculate repayments” to see what your
-          monthly repayments would be.
-        </p>
+                <div class="complex_input_field">
+                  <input
+                    type="text"
+                    name="Mortgage Term"
+                    id="input_mortgage_term"
+                  />
+                  <div class="input_clarification_block">years</div>
+                </div>
+                <p class="requirement_warning_message">
+                  This field is required
+                </p>
+              </div>
+              <div>
+                <label for="input_interest_rate">Interest Rate</label>
+                <div class="complex_input_field">
+                  <input
+                    type="text"
+                    name="Interest Rate"
+                    id="input_interest_rate"
+                  />
+                  <div class="input_clarification_block">%</div>
+                </div>
+                <p class="requirement_warning_message">
+                  This field is required
+                </p>
+              </div>
+            </fieldset>
+            <fieldset class="radio_input_fieldset">
+              <legend>Mortgage Type</legend>
+              <div class="radio_button_big_area">
+                <input
+                  type="radio"
+                  name="Mortgage Type"
+                  id="input_radio_repayment"
+                  class="radio_button"
+                />
+                <label for="input_radio_repayment">Repayment</label>
+              </div>
+
+              <div class="radio_button_big_area">
+                <input
+                  type="radio"
+                  name="Mortgage Type"
+                  id="input_radio_interest_only"
+                  class="radio_button"
+                />
+                <label for="input_radio_interest_only">Interest Only</label>
+              </div>
+            </fieldset>
+            <p class="requirement_warning_message">This field is required</p>
+            <button
+              type="submit"
+              value="Calculate Repayments"
+              id="submit_button"
+            >
+              <img src="./assets/images/icon-calculator.svg" alt="" />
+              <span>Calculate Repayments</span>
+            </button>
+          </form>
+        </section>
       </div>
-      <div id="completed_results_area">
-        <h2>Your results</h2>
-        <p>
-          Your results are shown below based on the information you provided. To
-          adjust the results, edit the form and click “calculate repayments”
-          again.
-        </p>
-        <div class="display_of_results">
-          <p>Your monthly repayments</p>
-          <div id="final_result_1"></div>
-          <p>Total you'll repay over the term</p>
-          <div id="final_result_2"></div>
+      <div class="dark_background_section">
+        <div id="empty_results_area">
+          <img src="./assets/images/illustration-empty.svg" alt="" />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div id="completed_results_area">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div id="display_of_results">
+            <p>Your monthly repayments</p>
+            <div id="final_result_1">£1,797.74</div>
+            <div class="division_line"></div>
+            <p>Total you'll repay over the term</p>
+            <div id="final_result_2">£539,322.94</div>
+          </div>
         </div>
       </div>
     </main>

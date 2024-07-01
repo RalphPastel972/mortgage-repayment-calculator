@@ -12,43 +12,6 @@
   --ff-sans: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Font Styles */
-.Text_Preset_1 {
-  font-optical-sizing: 56px;
-  line-height: 125%;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-style: normal;
-}
-.Text_Preset_2 {
-  font-optical-sizing: 24px;
-  line-height: 125%;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-style: normal;
-}
-.Text_Preset_3 {
-  font-optical-sizing: 18px;
-  line-height: 125%;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-style: normal;
-}
-.Text_Preset_4 {
-  font-optical-sizing: 16px;
-  line-height: 150%;
-  letter-spacing: 0px;
-  font-weight: 500;
-  font-style: normal;
-}
-.Text_Preset_5 {
-  font-optical-sizing: 14px;
-  line-height: 150%;
-  letter-spacing: 0px;
-  font-weight: 500;
-  font-style: normal;
-}
-
 /* Pour centrer mes cartes */
 
 body {
@@ -56,10 +19,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: content-box;
   font-family: var(--ff-sans);
 }
 
-main {
+.white_background_section {
   margin: 32px 24px;
 }
 
@@ -87,6 +51,7 @@ h1 {
   padding: 0;
   text-decoration-line: underline;
   color: var(--slate-700);
+  font-size: larger;
 }
 
 .zone_de_saisie {
@@ -99,8 +64,221 @@ fieldset {
   padding: 0;
   display: flex;
   flex-direction: column;
+
+  label,
+  legend {
+    color: var(--slate-700);
+    font-size: larger;
+    line-height: 150%;
+  }
+
+  .complex_input_field {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2em;
+    margin-top: 1em;
+    height: 55px;
+    border: solid 1px var(--slate-500);
+    border-radius: 4px;
+  }
+
+  .input_clarification_block {
+    padding: 0px 16px;
+    height: 100%;
+    align-content: center;
+    color: var(--slate-700);
+    font-weight: 500;
+    font-size: x-large;
+    border-radius: 2px;
+    background-color: var(--slate-100);
+  }
+
+  input {
+    width: 100%;
+    color: var(--slate-900);
+    font-weight: bold;
+    font-size: x-large;
+    border: none;
+    padding-left: 1rem;
+    height: 52px;
+    width: calc(100% - 2px);
+  }
+
+  .radio_button_big_area {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    height: 55px;
+    border: solid 1px var(--slate-500);
+    border-radius: 4px;
+
+    .radio_button {
+      width: auto;
+      margin: 0px 16px;
+    }
+  }
+}
+
+#submit_button {
+  margin: 2em 0;
+  width: 100%;
+  background-color: var(--lime);
+  color: var(--slate-900);
+  font-weight: 500;
+  font-size: x-large;
+  letter-spacing: 1px;
+  word-spacing: 0.5rem;
+  padding: 1em;
+  border-radius: 2em;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8em;
+  justify-content: center;
+  p {
+    margin: 0 0 0 0.6em;
+  }
 }
 
 .radio_input_fieldset {
   display: block;
+  margin-bottom: 2em;
+}
+
+.dark_background_section {
+  background-color: var(--slate-900);
+  padding: 32px 24px;
+  h2 {
+    color: white;
+  }
+
+  p {
+    color: var(--slate-300);
+    font-size: large;
+  }
+
+  text-align: justify;
+}
+
+#final_result_1 {
+  color: var(--lime);
+  font-size: xxx-large;
+  font-weight: 700;
+}
+
+#display_of_results {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5em;
+  border-radius: 10px;
+  border-top: solid 5px var(--lime);
+}
+
+.division_line {
+  border-top: solid 1px #9abed54d;
+  margin: 1em 0;
+}
+
+#final_result_2 {
+  color: white;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+/* Before calculation and result */
+#empty_results_area {
+  display: none;
+}
+
+/* Form styling */
+input:checked {
+  accent-color: var(--lime);
+}
+
+.complex_input_field:has(input:focus) {
+  border: solid 1px var(--lime);
+  input {
+    outline: none;
+  }
+
+  .input_clarification_block {
+    background-color: var(--lime);
+  }
+}
+
+.complex_input_field:has(input:required) {
+  border: solid 1px red;
+  input {
+    outline: none;
+  }
+
+  .input_clarification_block {
+    background-color: red;
+  }
+}
+
+.radio_button_big_area:has(input:checked) {
+  border: solid 1px var(--lime);
+  background-color: #d8db2f26;
+}
+
+.requirement_warning_message {
+  position: relative;
+  top: -1.8em;
+  color: var(--special-red);
+  display: none;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: var(--slate-100);
+  }
+
+  main {
+    width: 85%;
+    background-color: white;
+    margin: 2em 0;
+    border-radius: 24px;
+  }
+
+  .chapeau {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #moving_inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  #submit_button {
+    width: fit-content;
+  }
+
+  .dark_background_section {
+    border-radius: 0 0 24px 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    display: flex;
+  }
+
+  .white_background_section {
+    width: 60%;
+  }
+
+  .dark_background_section {
+    padding: 40px;
+    width: 40%;
+    border-radius: 0 24px 24px 100px;
+
+    p {
+      line-height: 150%;
+    }
+  }
 }
