@@ -186,7 +186,11 @@ fieldset {
 }
 
 /* Before calculation and result */
-#empty_results_area {
+.pannel_is_visible {
+  display: block;
+}
+
+.pannel_is_hidden {
   display: none;
 }
 
