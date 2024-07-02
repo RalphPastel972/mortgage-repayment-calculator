@@ -1,6 +1,8 @@
 :root {
   /* Colors */
   --lime: #d8db2f;
+  --lime-hovered: #d8db2f85;
+  --lime-clicked: #c9cc24e4;
   --slate-900: #133041;
   --slate-700: #4e6e7e;
   --slate-500: #6b94a8;
@@ -52,6 +54,10 @@ h1 {
   text-decoration-line: underline;
   color: var(--slate-700);
   font-size: larger;
+}
+
+#clear_all_fields_button:hover {
+  color: var(--slate-900);
 }
 
 .zone_de_saisie {
@@ -141,6 +147,14 @@ fieldset {
   }
 }
 
+#submit_button:hover {
+  background-color: var(--lime-hovered);
+}
+
+#submit_button:active {
+  background-color: var(--lime-clicked);
+}
+
 .radio_input_fieldset {
   display: block;
   margin-bottom: 2em;
@@ -207,6 +221,25 @@ input:checked {
 
   .input_clarification_block {
     background-color: var(--lime);
+  }
+}
+
+.complex_input_field:hover {
+  border: solid 1px var(--slate-900);
+  input {
+    outline: none;
+  }
+}
+
+.complex_input_field:has(input:invalid) {
+  border: solid 1px var(--special-red) !important;
+  input {
+    outline: none;
+  }
+
+  .input_clarification_block {
+    background-color: var(--special-red);
+    color: white !important;
   }
 }
 
