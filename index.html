@@ -39,43 +39,57 @@
           <form action="" method="">
             <fieldset>
               <label for="input_mortgage_amount">Mortgage Amount</label>
-              <div class="complex_input_field">
+              <div
+                id="complex_input_field_1_Warning_ON"
+                class="complex_input_field"
+              >
                 <div class="input_clarification_block">£</div>
                 <input
                   type="text"
                   id="input_mortgage_amount"
                   name="Amount of the mortgage"
+                  pattern="([0-9]+[.]?[0-9]{0,2})"
                 />
               </div>
-              <p class="requirement_warning_message">This field is required</p>
+              <p id="warning_field_1" class="requirement_warning_message_OFF">
+                This field is required
+              </p>
             </fieldset>
             <fieldset id="moving_inputs">
               <div>
                 <label for="input_mortgage_term">Mortgage Term</label>
 
-                <div class="complex_input_field">
+                <div
+                  id="complex_input_field_2_Warning_ON"
+                  class="complex_input_field"
+                >
                   <input
                     type="text"
                     name="Mortgage Term"
+                    pattern="([0-9]+[.]?[0-9]{0,2})"
                     id="input_mortgage_term"
                   />
                   <div class="input_clarification_block">years</div>
                 </div>
-                <p class="requirement_warning_message">
+                <p id="warning_field_2" class="requirement_warning_message_OFF">
                   This field is required
                 </p>
               </div>
               <div>
                 <label for="input_interest_rate">Interest Rate</label>
-                <div class="complex_input_field">
+                <div
+                  id="complex_input_field_3_Warning_ON"
+                  class="complex_input_field"
+                >
                   <input
                     type="text"
                     name="Interest Rate"
                     id="input_interest_rate"
+                    pattern="([0-9]+[.]?[0-9]{0,2})"
                   />
                   <div class="input_clarification_block">%</div>
                 </div>
-                <p class="requirement_warning_message">
+                <p id="warning_field_3" class="requirement_warning_message_OFF">
                   This field is required
                 </p>
               </div>
@@ -102,9 +116,11 @@
                 <label for="input_radio_interest_only">Interest Only</label>
               </div>
             </fieldset>
-            <p class="requirement_warning_message">This field is required</p>
+            <p id="warning_field_4" class="requirement_warning_message_OFF">
+              This field is required
+            </p>
             <button
-              type="submit"
+              type="button"
               value="Calculate Repayments"
               id="submit_button"
             >
@@ -140,5 +156,6 @@
         </div>
       </div>
     </main>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>

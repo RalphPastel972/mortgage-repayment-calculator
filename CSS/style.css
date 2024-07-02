@@ -15,7 +15,7 @@
 /* Pour centrer mes cartes */
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,14 +206,15 @@ input:checked {
   }
 }
 
-.complex_input_field:has(input:required) {
-  border: solid 1px red;
+.complex_input_field_Warning_ON {
+  border: solid 1px var(--special-red) !important;
   input {
     outline: none;
   }
 
   .input_clarification_block {
-    background-color: red;
+    background-color: var(--special-red);
+    color: white !important;
   }
 }
 
@@ -222,11 +223,18 @@ input:checked {
   background-color: #d8db2f26;
 }
 
-.requirement_warning_message {
+/* Warning Management */
+/* The OFF warnings need to be above the ON warnings */
+
+.requirement_warning_message_OFF {
+  display: none;
+}
+
+.requirement_warning_message_ON {
   position: relative;
   top: -1.8em;
   color: var(--special-red);
-  display: none;
+  display: block;
 }
 
 /* Responsiveness */
