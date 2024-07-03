@@ -5,7 +5,6 @@ let inputRadioRepayment = document.getElementById("input_radio_repayment");
 let inputRadioInterestOnly = document.getElementById(
   "input_radio_interest_only"
 );
-let canWeProceedToTheResultPage = false;
 
 const clearAllFieldsButton = document.getElementById("clear_all_fields_button");
 clearAllFieldsButton.addEventListener("click", () => {

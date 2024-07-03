@@ -255,6 +255,10 @@ input:checked {
   }
 }
 
+.radio_button_big_area:hover {
+  border: solid 1px var(--lime);
+}
+
 .radio_button_big_area:has(input:checked) {
   border: solid 1px var(--lime);
   background-color: #d8db2f26;
